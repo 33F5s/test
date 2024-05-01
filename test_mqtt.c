@@ -86,8 +86,8 @@ int main (int argc, char **argv)
     int ap3216cfd = open("/dev/I2C_AP3216C",O_RDONLY);
     int mpu6050fd = open("/dev/I2C1_mpu6050",O_RDONLY);  
     if(dht11fd<0 || ap3216cfd<0 || mpu6050fd<0){
-        printf("open error \n");
-        return 0;
+        perror("open error");
+        return -1;
     }
 
     //定义数组来读取传感器，和发送消息
