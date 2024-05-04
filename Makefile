@@ -17,8 +17,8 @@ SOURCE=$(foreach dir,$(SRC_DIR),$(wildcard $(dir)/*.c))
 OBJS=$(patsubst %.c,$(BUILD_DIR)/%.o,$(notdir $(SOURCE)))
 VPATH=$(SRC_DIR)
 
-$(BUILD_DIR)/$(TARGET):$(OBJS)
-	$(CC) $^ -o $@ -lmosquitto 
+$(BUILD_DIR)/main:$(OBJS)
+	$(CC) $^ -o $(BUILD_DIR)/$(TARGET) -lmosquitto 
 
 $(BUILD_DIR)/%.o:%.c $(INCLUDES) | create_build
 	$(CC) -c $< -o $@ -lmosquitto 
