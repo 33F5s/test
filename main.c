@@ -6,7 +6,7 @@
 #include <mosquitto.h>
 #include <errno.h>
 
-#define HOST "47.109.197.224"
+#define HOST "47.108.223.15"
 #define PORT 1883
 #define KEEP_ALIVE 60
 #define MSG_MAX_SIZE 512
@@ -122,7 +122,7 @@ int main (int argc, char **argv)
         mosquitto_publish(mosq,NULL,"mpu6050",strlen(sendData),sendData,0,0);
 
         //延时循环发送
-        usleep(1000*1000);
+        usleep(2000*1000);
     }
 
     mosquitto_disconnect(mosq);
