@@ -122,7 +122,7 @@ int main (int argc, char **argv)
         mosquitto_publish(mosq,NULL,"mpu6050",strlen(sendData),sendData,0,0);
 
         //延时循环发送
-        usleep(2000*1000);
+        usleep(1000*1000);
     }
 
     mosquitto_disconnect(mosq);
